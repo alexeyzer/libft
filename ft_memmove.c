@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -15,40 +15,46 @@
 #include <stdio.h>
 #include <unistd.h>
 
-void	*ft_memcpy(void *destination, const void *source, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len);
 {
-	
-	int		i;
 	char	*a;
+	char	*b;
+	int		i;
 
 	i = 0;
-	a = destination;
-	while(n-- > 0)
+	a = (char*)destination;
+	b = (char*)source;
+	while(n-- > 0 && b++ && a++)
 	{
-		*((char*)destination++) = *((char*)source++);
+		if (*b == (char)c)
+		{
+			*a = *b;
+			return (a++);
+		}
+		*a = *b;
+		i++;
 	}
-	return (a);
+	return (NULL);
 }
+
 int		main()
 {
 	char *a;
 	char *b;
+	char *c;
 
-	a = (char*)malloc(sizeof(char)*7);
-	b = (char*)malloc(sizeof(char)*7);
-	b[0] = 'a';
-	b[1] = 'b';
-	b[2] = 'c';
-	b[3] = 'd';
-	b[4] = 'e';
-	b[5] = 'f';
-	b[6] = 'g';
-	
-	ft_memcpy(b + 3 , b, 5);
+	a = (char*)malloc(sizeof(char)*3);
+	b = (char*)malloc(sizeof(char)*3);
+	memset(b,'c',3);
+	b[1]= 'b';
 
-	write(1,b,8);
-
-
+	if(ft_memccpy(a,b,'c',3) == NULL)
+		printf("NO charcter");
+	else
+	{
+		c = ft_memccpy(a,b,'c',3);
+		printf("%c", *c);
+	}
 
 
 	

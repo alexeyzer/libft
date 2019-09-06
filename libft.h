@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                        :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/03 21:10:54 by aguiller          #+#    #+#             */
-/*   Updated: 2019/09/03 21:10:55 by aguiller         ###   ########.fr       */
+/*   Created: 2019/09/06 22:55:46 by aguiller          #+#    #+#             */
+/*   Updated: 2019/09/06 22:56:32 by aguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-void	ft_bzero(void *s, size_t n)
-{
-	char	*str;
+# include <string.h>
 
-	str = (char*)s;
-	if(n < 1)
-		return ;
-	while (n-- > 0)
-		*str++ = 0;
-}
+void	ft_bzero(void *s, size_t n);
+void	*ft_memmove(void *dst, const void *src, size_t len);
+void	*ft_memccpy(void *destination, const void *source, int c, size_t n);
+void	*ft_memcpy(void *destination, const void *source, size_t n);
+void	*ft_memset(void *destination, int c, size_t n);
+#endif

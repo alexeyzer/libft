@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/05 20:39:38 by aguiller          #+#    #+#             */
-/*   Updated: 2019/09/05 20:39:39 by aguiller         ###   ########.fr       */
+/*   Created: 2019/09/10 20:13:08 by aguiller          #+#    #+#             */
+/*   Updated: 2019/09/10 20:14:42 by aguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 void	*ft_memccpy(void *destination, const void *source, int c, size_t n)
 {
-	 
-	char			*a;
-	const char		*b;
+	char		*a;
+	const char	*b;
 
 	a = (char*)destination;
 	b = (char*)source;
-	while(n-- > 0)
+	while (n-- > 0)
 	{
 		if (*b == (char)c)
 		{

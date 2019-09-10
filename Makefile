@@ -17,8 +17,8 @@ SRC2 = ft_*.o
 all: $(NAME)
 
 $(NAME):
-	gcc -c -Wall -Wextra -Werror $(SRC1) 
-	ar -rc  $(NAME) $(SRC2)
+	@gcc -c -Wall -Wextra -Werror $(SRC1) 
+	@ar -rc  $(NAME) $(SRC2)
 
 clean:
 	@rm -f *.o

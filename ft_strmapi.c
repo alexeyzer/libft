@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 15:34:17 by aguiller          #+#    #+#             */
-/*   Updated: 2019/09/16 15:34:49 by aguiller         ###   ########.fr       */
+/*   Created: 2019/09/16 17:21:15 by aguiller          #+#    #+#             */
+/*   Updated: 2019/09/16 17:21:17 by aguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalpha(int c)
+char *ft_strmapi(char const *s, char(*f)(unsigned int, char))
 {
-	if ((c >= 'a' && c <= 'z') 
-		|| (c >= 'A' && c <= 'Z'))
-		return (c);
-	return (0);
+	char	*newmem;
+	int		i;
+	int		j;
+
+	j = 0;
+	if (s == NULL)
+		return (NULL);
+	i = ft_strlen(s);
+	newmem = ft_strnew(i);
+	ft_strclr(newmem);
+	if (newmem == NULL)
+		return (NULL);
+
+	while (s[j])
+	{
+		newmem[j] = f(j,s[j]);
+		j++;
+	}
+	return (newmem);
 }

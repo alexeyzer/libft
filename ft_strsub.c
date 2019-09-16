@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 15:34:17 by aguiller          #+#    #+#             */
-/*   Updated: 2019/09/16 15:34:49 by aguiller         ###   ########.fr       */
+/*   Created: 2019/09/16 18:05:36 by aguiller          #+#    #+#             */
+/*   Updated: 2019/09/16 18:05:38 by aguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalpha(int c)
+char *ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	if ((c >= 'a' && c <= 'z') 
-		|| (c >= 'A' && c <= 'Z'))
-		return (c);
-	return (0);
+	unsigned int		j;
+	char	*strmem;
+
+	j = 0;
+	if (s == NULL)
+		return (NULL);
+	if(start > ft_strlen(s))
+		return (NULL);
+	strmem = ft_strnew(len);
+	if(strmem == NULL)
+		return (NULL);
+	ft_strclr(strmem);
+	while(j < len && s[start] != '\0')
+	{
+		strmem[j] = s[start];
+		j++;
+		start++;
+	}
+	return (strmem);
 }

@@ -21,12 +21,12 @@ char	*ft_strstr(const char *haystack, const char *needle)
 
 	i = 0;
 	j = 0;
-	if(needle[0] == '\0')
+	if (needle[0] == '\0')
 		return ((char*)haystack);
 	while (haystack[j] != '\0')
 	{
 		i = 0;
-		if(needle[i] == haystack[j])
+		if (needle[i] == haystack[j])
 		{
 			speclen = j;
 			while (needle[i] == haystack[j])

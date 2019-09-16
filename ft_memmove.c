@@ -25,13 +25,13 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		return (NULL);
 	if (a > b)
 	{
-		while(i > 0 )
+		while (i > 0 )
 		{
 			a[i - 1] = b[i - 1];
 			i--;
 		}
 	}
-	if(b > a)
+	if (b > a)
 		ft_memcpy(a, b, i);
 	return (a);
 }

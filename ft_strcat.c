@@ -21,7 +21,7 @@ char	*ft_strcat(char *restrict s1, const char *restrict s2)
 	j = 0;
 	while (s1[i])
 		i++;
-	while(s2[j])
+	while (s2[j])
 	{
 		s1[i] = s2[j];
 		j++;

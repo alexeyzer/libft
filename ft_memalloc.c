@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memmalloc.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 15:34:17 by aguiller          #+#    #+#             */
-/*   Updated: 2019/09/16 15:34:49 by aguiller         ###   ########.fr       */
+/*   Created: 2019/09/16 16:09:10 by aguiller          #+#    #+#             */
+/*   Updated: 2019/09/16 16:14:12 by aguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalpha(int c)
+void *ft_memalloc(size_t size)
 {
-	if ((c >= 'a' && c <= 'z') 
-		|| (c >= 'A' && c <= 'Z'))
-		return (c);
-	return (0);
+	void	*memory;
+
+	memory = NULL;
+	memory = malloc(size);
+	if (memory == NULL)
+		return (NULL);
+	ft_bzero(memory, size);
+	return (memory);
 }

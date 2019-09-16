@@ -16,17 +16,22 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char			*a;
 	const char		*b;
-	int				i;
+	size_t			i;
 
 	i = len;
 	a = (char*)dst;
 	b = (char*)src;
 	if(a == NULL && b == NULL)
 		return (NULL);
-	while(len-- > 0)
+	if (a > b)
 	{
-		a[i - 1] = b[i - 1];
-		i--;
+		while(i > 0 )
+		{
+			a[i - 1] = b[i - 1];
+			i--;
+		}
 	}
+	if(b > a)
+		ft_memcpy(a, b, i);
 	return (a);
 }

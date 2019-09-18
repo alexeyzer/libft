@@ -6,7 +6,7 @@
 /*   By: alexzudin <alexzudin@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 12:49:50 by alexzudin         #+#    #+#             */
-/*   Updated: 2019/09/18 14:19:24 by alexzudin        ###   ########.fr       */
+/*   Updated: 2019/09/18 14:31:28 by alexzudin        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ char **ft_strsplit(char const *s, char c)
 	char	**bigmem;
 
 	bigmem = NULL;
+	if (!s)
+		return (NULL);
 	countw = to_countwrolds(s, c);
 	i = 0;
 	start = 0;

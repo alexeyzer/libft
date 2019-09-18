@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexzudin <alexzudin@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/03 21:10:54 by aguiller          #+#    #+#             */
-/*   Updated: 2019/09/18 19:35:53 by alexzudin        ###   ########.fr       */
+/*   Created: 2019/09/18 20:08:04 by alexzudin         #+#    #+#             */
+/*   Updated: 2019/09/18 20:10:32 by alexzudin        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *restrict s1, const char *restrict s2, size_t n)
+void ft_putnbr_fd(int n, int fd)
 {
-	int i;
-	int j;
+	char *s;
 
-	i = 0;
-	j = 0;
-	while (s1[i])
-		i++;
-	while(s2[j] && n > 0)
-	{
-		s1[i] = s2[j];
-		j++;
-		i++;
-		n--;
-	}
-	s1[i] = '\0';
-	return (s1);
+	s = NULL;
+	s = ft_itoa(n);
+	if (s == NULL)
+		return;
+	ft_putstr_fd(s, fd);
 }

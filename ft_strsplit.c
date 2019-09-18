@@ -6,12 +6,11 @@
 /*   By: alexzudin <alexzudin@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 12:49:50 by alexzudin         #+#    #+#             */
-/*   Updated: 2019/09/18 14:31:28 by alexzudin        ###   ########.fr       */
+/*   Updated: 2019/09/18 19:35:26 by alexzudin        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdio.h"
 
 static int to_countwrolds(char const *s, char c)
 {

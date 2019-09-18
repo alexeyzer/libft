@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexzudin <alexzudin@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/03 21:10:54 by aguiller          #+#    #+#             */
-/*   Updated: 2019/09/18 19:35:53 by alexzudin        ###   ########.fr       */
+/*   Created: 2019/09/18 19:59:27 by alexzudin         #+#    #+#             */
+/*   Updated: 2019/09/18 20:00:05 by alexzudin        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *restrict s1, const char *restrict s2, size_t n)
+void ft_putchar_fd(char c, int fd)
 {
-	int i;
-	int j;
-
-	i = 0;
-	j = 0;
-	while (s1[i])
-		i++;
-	while(s2[j] && n > 0)
-	{
-		s1[i] = s2[j];
-		j++;
-		i++;
-		n--;
-	}
-	s1[i] = '\0';
-	return (s1);
+	write(fd, &c ,1);
 }

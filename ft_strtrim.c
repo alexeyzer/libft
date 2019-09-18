@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aguiller <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alexzudin <alexzudin@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 19:48:37 by aguiller          #+#    #+#             */
-/*   Updated: 2019/09/16 19:48:41 by aguiller         ###   ########.fr       */
+/*   Updated: 2019/09/18 12:45:15 by alexzudin        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,17 @@ char *ft_strtrim(char const *s)
 	first = 0;
 	if (s == NULL)
 		return (NULL);
-	spec = ft_strlen(s) - 1;
+	spec = ft_strlen(s);
 	while (s[first] == ' ' || s[first] == '\t' || s[first] == '\n')
 		first++;
-	while (first < spec && (s[spec] == ' ' || s[spec] == '\t' || s[spec] == '\n'))
+	while (first < spec && (s[spec - 1] == ' ' || s[spec - 1] == '\t' || s[spec - 1] == '\n'))
 		spec--;
-	memstr = ft_strnew(spec - first + 1);
+	if(spec == first)
+		return (ft_strnew(1));
+	memstr = ft_strnew(spec - first);
 	if (memstr == NULL)
 		return (NULL);
-	while (first < spec + 1)
+	while (first < spec)
 		memstr[i++] = s[first++];
 	return (memstr);
 }

@@ -28,7 +28,7 @@ char *ft_strtrim(char const *s)
 		first++;
 	while (first < spec && (s[spec - 1] == ' ' || s[spec - 1] == '\t' || s[spec - 1] == '\n'))
 		spec--;
-	if(spec == first)
+	if (spec == first)
 		return (ft_strnew(1));
 	memstr = ft_strnew(spec - first);
 	if (memstr == NULL)

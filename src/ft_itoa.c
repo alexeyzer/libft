@@ -61,7 +61,7 @@ char *ft_itoa(int n)
 		negative = -1;
 	ten = to_count(n, &ten, negative ) / 10;
 	makestr(n, negative, strmem, &i);
-	if(strmem == NULL)
+	if (strmem == NULL)
 		return (NULL);
 	while (n != 0)
 	{

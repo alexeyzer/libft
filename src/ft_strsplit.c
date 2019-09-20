@@ -77,7 +77,7 @@ char **ft_strsplit(char const *s, char c)
 	while (i < countw)
 	{
 		to_countone(s, c, &start, &len);
-		if(!(bigmem[i] = ft_strsub(s, start, len)))
+		if (!(bigmem[i] = ft_strsub(s, start, len)))
 			return (NULL);
 		i++;
 	}

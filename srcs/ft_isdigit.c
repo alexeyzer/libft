@@ -6,7 +6,7 @@
 /*   By: aguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 13:00:11 by aguiller          #+#    #+#             */
-/*   Updated: 2019/09/20 13:00:15 by aguiller         ###   ########.fr       */
+/*   Updated: 2019/09/20 14:14:01 by aguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_isdigit(int c)
 {
-	if (c >= '0' && c <= '9')
-		return (c);
+	if ((unsigned int)c >= '0' && (unsigned int)c <= '9')
+		return (1);
 	return (0);
 }

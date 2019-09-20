@@ -70,7 +70,7 @@ char			**ft_strsplit(char const *s, char c)
 	start = 0;
 	len = 0;
 	bigmem = (char**)malloc(sizeof(char**) * (countw + 1));
-	if (bigmem == NULL || countw == 0)
+	if (bigmem == NULL)
 		return (NULL);
 	bigmem[countw] = NULL;
 	while (i < countw)

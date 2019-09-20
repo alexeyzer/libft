@@ -6,7 +6,7 @@
 /*   By: aguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 19:00:23 by aguiller          #+#    #+#             */
-/*   Updated: 2019/09/20 12:27:23 by aguiller         ###   ########.fr       */
+/*   Updated: 2019/09/20 16:10:13 by aguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		j;
 	char	*memstr;
 
-	if (s1 == NULL || s2 == NULL)
+	if ((s1 == NULL || s2 == NULL))
 		return (NULL);
 	i = 0;
 	j = 0;
-	memstr = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
+	memstr = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (memstr == NULL)
 		return (NULL);
 	ft_strclr(memstr);
@@ -37,5 +37,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 		j++;
 	}
+	memstr[i] = '\0';
 	return (memstr);
 }

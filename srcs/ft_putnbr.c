@@ -6,7 +6,7 @@
 /*   By: alexzudin <alexzudin@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 19:54:30 by alexzudin         #+#    #+#             */
-/*   Updated: 2019/09/20 12:50:16 by aguiller         ###   ########.fr       */
+/*   Updated: 2019/09/20 19:25:47 by aguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,18 @@
 
 void	ft_putnbr(int n)
 {
-	char *s;
-
-	s = NULL;
-	s = ft_itoa(n);
-	if (s == NULL)
-		return ;
-	ft_putstr(s);
+	if (n == -2147483648)
+		ft_putstr("-2147483648");
+	if (n < 0)
+	{
+		n = n * -1;
+		ft_putchar('-');
+	}
+	if (n >= 10)
+	{
+		ft_putnbr(n / 10);
+		ft_putchar(n % 10 + '0');
+	}
+	else
+		ft_putchar(n + '0');
 }

@@ -12,62 +12,50 @@
 
 #include "libft.h"
 
-static int		to_count(int n, int *counter, int negative)
+static int		to_count(long n)
 {
-	int ten;
+	int count;
 
-	ten = 1;
+	count = 0;
+	if (n < 0)
+	{
+		n = n * -1;
+		count++;
+	}
 	if (n == 0)
-		*counter = 1;
-	while (n != 0)
+		count++;
+	while (n > 0)
 	{
-		ten = ten * 10;
-		(*counter)++;
-		n = (n - (n % ten * ten / ten) * negative);
+		n = n / 10;
+		count++;
 	}
-	return (ten);
-}
-
-static void		makestr(int n, int negative, char *strmem, int *i)
-{
-	int counter;
-
-	counter = 0;
-	to_count(n, &counter, negative);
-	if (negative < 0)
-	{
-		strmem = ft_strnew(counter + 1);
-		strmem[0] = '-';
-		*i = 1;
-	}
-	else
-	{
-		strmem = ft_strnew(counter);
-	}
+	return (count);
 }
 
 char			*ft_itoa(int n)
 {
 	char	*strmem;
-	int		negative;
 	int		i;
-	int		ten;
+	long	nr;
 
-	i = 0;
-	strmem = NULL;
-	negative = 1;
-	if (n < 0)
-		negative = -1;
-	ten = to_count(n, &ten, negative) / 10;
-	makestr(n, negative, strmem, &i);
+	nr = n;
+	strmem = (char*)malloc(sizeof(char) * (to_count(nr) + 1));
 	if (strmem == NULL)
 		return (NULL);
-	while (n != 0)
+	strmem[to_count(n)] = '\0';
+	i = to_count(nr) - 1;
+	if (nr == 0)
+		strmem[0] = '0';
+	if (n <= -1)
 	{
-		strmem[i] = (negative * (n / ten)) + '0';
-		n = (n - ((n / ten * ten) * negative));
-		ten = ten / 10;
-		i++;
+		nr = nr * -1;
+		strmem[0] = '-';
+	}
+	while (nr > 0)
+	{
+		strmem[i] = ('0' + (nr % 10));
+		nr = nr / 10;
+		i--;
 	}
 	return (strmem);
 }

@@ -6,7 +6,7 @@
 /*   By: alexzudin <alexzudin@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 22:55:46 by aguiller          #+#    #+#             */
-/*   Updated: 2019/09/20 20:49:04 by aguiller         ###   ########.fr       */
+/*   Updated: 2019/09/20 21:53:45 by aguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 
+
 typedef struct		s_list
 {
 	void			*content;
@@ -82,5 +83,8 @@ typedef struct		s_list
 }					t_list;
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
-
+void				ft_lstdelone(t_list **alst,
+	void (*del)(void*, size_t));
+void 				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void    			ft_lstadd(t_list **alst, t_list *new);
 #endif

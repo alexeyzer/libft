@@ -6,7 +6,7 @@
 /*   By: alexzudin <alexzudin@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 22:55:46 by aguiller          #+#    #+#             */
-/*   Updated: 2019/09/18 20:09:38 by alexzudin        ###   ########.fr       */
+/*   Updated: 2019/09/19 14:09:01 by alexzudin        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
+ int	ft_tolower(int c);
 void	*ft_memalloc(size_t size);
 void 	ft_memdel(void **ap);
 char	*ft_strnew(size_t size);

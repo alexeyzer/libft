@@ -6,7 +6,7 @@
 /*   By: aguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 20:00:23 by aguiller          #+#    #+#             */
-/*   Updated: 2019/09/20 20:43:43 by aguiller         ###   ########.fr       */
+/*   Updated: 2019/09/21 17:10:15 by aguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,15 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	new_list = (t_list*)malloc(sizeof(t_list) * 1);
 	if (new_list == NULL)
 		return (NULL);
+	new_list->next = NULL;
 	if (content == NULL)
 	{
 		new_list->content = NULL;
-		new_list->content = 0;
+		new_list->content_size = 0;
 	}
 	else
 	{
-		new_list->content = malloc(content_size);
+		new_list->content = (void*)malloc(content_size);
 		if (new_list->content == NULL)
 		{
 			free(new_list);

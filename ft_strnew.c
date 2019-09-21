@@ -6,7 +6,7 @@
 /*   By: aguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 16:24:48 by aguiller          #+#    #+#             */
-/*   Updated: 2019/09/20 12:18:57 by aguiller         ###   ########.fr       */
+/*   Updated: 2019/09/21 19:50:46 by aguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@ char	*ft_strnew(size_t size)
 
 	memstr = NULL;
 	i = 0;
-	if (size > 0)
-		memstr = (char*)malloc(size + 1);
-	else
+	if (size >= SIZE_MAX)
 		return (NULL);
+	memstr = (char*)malloc(size + 1);
 	if (memstr == NULL)
 		return (NULL);
 	while (i < size + 1)

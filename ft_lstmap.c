@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alexzudin <alexzudin@student.42.fr>        +#+  +:+       +#+        */
+/*   By: aguiller <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/18 19:54:30 by alexzudin         #+#    #+#             */
-/*   Updated: 2019/09/20 19:25:47 by aguiller         ###   ########.fr       */
+/*   Created: 2019/09/21 17:54:04 by aguiller          #+#    #+#             */
+/*   Updated: 2019/09/21 17:54:06 by aguiller         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
-{
-	if (n == -2147483648)
-	{
-		ft_putstr("-2147483648");
-		return ;
-	}
-	if (n < 0)
-	{
-		n = n * -1;
-		ft_putchar('-');
-	}
-	if (n >= 10)
-	{
-		ft_putnbr(n / 10);
-		ft_putchar(n % 10 + '0');
-	}
-	else
-		ft_putchar(n + '0');
-}
+// t_list *ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+// {
+// 	t_list *head;
+
+// 	head = NULL;
+
+
+// }

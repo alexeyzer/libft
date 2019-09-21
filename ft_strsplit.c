@@ -54,6 +54,20 @@ static void		to_countone(char const *s, char c, int *start, int *len)
 	}
 }
 
+static char		**freezz(char ***head, int i)
+{
+	int r;
+
+	r = 0;
+	while (i >= 0)
+	{
+		free(head[i]);
+		i--;
+	}
+	head = NULL;
+	return (NULL);
+}
+
 char			**ft_strsplit(char const *s, char c)
 {
 	int		i;
@@ -77,7 +91,7 @@ char			**ft_strsplit(char const *s, char c)
 	{
 		to_countone(s, c, &start, &len);
 		if (!(bigmem[i] = ft_strsub(s, start, len)))
-			return (NULL);
+			return (freezz(&bigmem, i - 1));
 		i++;
 	}
 	return (bigmem);

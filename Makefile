@@ -6,7 +6,7 @@
 #    By: aguiller <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 22:26:44 by aguiller          #+#    #+#              #
-#    Updated: 2019/09/20 21:16:40 by aguiller         ###   ########.fr        #
+#    Updated: 2019/09/21 20:50:06 by aguiller         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,7 @@ SRC = ft_atoi.c \
 		ft_tolower.c\
 		ft_toupper.c
 
-NAME = "libft.a"
+NAME = libft.a
 
 OBJ = $(SRC:%.c=%.o)
 all: $(NAME)

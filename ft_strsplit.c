@@ -77,7 +77,7 @@ char			**ft_strsplit(char const *s, char c)
 	char	**bigmem;
 
 	bigmem = NULL;
-	if (!s)
+	if (!s || !c)
 		return (NULL);
 	countw = to_countwrolds(s, c);
 	i = 0;

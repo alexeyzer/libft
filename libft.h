@@ -89,4 +89,8 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstaddlast(t_list **head, t_list *new);
+void				ft_lstdelif(t_list *lst, int (*f)(t_list *elem));
+int					ft_islower(int c);
+int					ft_isupper(int c);
+int					ft_countwins(char const *s, char c);
 #endif

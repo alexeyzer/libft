@@ -38,7 +38,7 @@ char			*ft_itoa(int n)
 	int		i;
 	long	nr;
 
-	nr = n;
+	nr = (long)n;
 	strmem = (char*)malloc(sizeof(char) * (to_count(nr) + 1));
 	if (strmem == NULL)
 		return (NULL);
